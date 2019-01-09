@@ -59,4 +59,11 @@ class OffersController extends Controller
         ]);
         return redirect()->route('offers');
     }
+//    public function store(Request $request,$id){
+//        $offers = Offer::find($id);
+//        $offers->update([
+//            'store_id' => $request->input('store_id')
+//        ]);
+//        return view('offers/index');
+//    }  with('store')->
 }

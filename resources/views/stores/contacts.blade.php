@@ -7,7 +7,7 @@
                 <div class="table-user">
                     <div class="table-header-blue clearfix">
                         <span class="right">
-                            <a href="" class="action" style="color: white">Редагувати дані</a>
+                            <a href="{{route('store.offers',$store->id)}}" class="action" style="color: white">Offers</a>
                             <a href="" class="delete"></a>
                         </span>
                     </div>

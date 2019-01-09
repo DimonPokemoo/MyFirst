@@ -8,7 +8,7 @@ use Closure;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 
-class OfferBlock
+class UserBlock
 {
     /**
      * Handle an incoming request.
@@ -19,11 +19,11 @@ class OfferBlock
      */
     public function handle($request, Closure $next)
     {
-        $offers = Offer::find($request->route()->parameter('id'));
-        if (Auth::user()->id==$offers['user_id']
-            || Auth::user()->role=='ADMIN'){
+        $users = User::find($request->route()->parameter('id'));
+        if (Auth::user()->role=='ADMIN'
+            || Auth::user()->id==$users['id']){
             return $next($request);
         }
-        return redirect('/offers');
+        return redirect('/users');
     }
 }
